@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=4 uid="uid://hu4s85orfl8w"]
+[gd_scene load_steps=9 format=4 uid="uid://hu4s85orfl8w"]
 
 [ext_resource type="Script" uid="uid://vbdgyhxrbij1" path="res://scripts/player.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://doah2kuc1pxqu" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://db0hgqakvj4xd" path="res://images/bleueueueu.png" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dcxss0htxapmp" path="res://coin_ui.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ccrebeillprx1" path="res://coin.tscn" id="5_7mycd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(168, 149)
+size = Vector2(24, 21)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("3_h2yge")
@@ -44,21 +46,46 @@ sources/1 = SubResource("TileSetAtlasSource_1bvp3")
 script = ExtResource("1_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(233, 166)
-scale = Vector2(1.30469, 1.16406)
+position = Vector2(17, 467)
+scale = Vector2(0.183595, 0.160155)
 texture = ExtResource("1_ig7tw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(233, 166.5)
+position = Vector2(17, 467)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(233, 167)
+position = Vector2(54, 434)
+zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(113, 97)
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAD+/wUAAQABAAEAAAD//wUAAQABAAEAAAD//wYAAQABAAEAAAAAAAYAAQABAAEAAAABAAYAAQABAAEAAAACAAYAAQABAAEAAAADAAYAAQABAAEAAAAEAAYAAQABAAEAAAAFAAYAAQABAAEAAAAHAAUAAQABAAEAAAAHAAQAAQABAAEAAAAHAAMAAQABAAEAAAAIAAMAAQABAAEAAAAJAAMAAQABAAEAAAAKAAMAAQABAAEAAAAKAAIAAQABAAEAAAALAAIAAQABAAEAAAAGAAUAAQABAAEAAAAKAAYAAQABAAEAAAALAAcAAQABAAEAAAAMAAcAAQABAAEAAAANAAcAAQABAAEAAAAOAAcAAQABAAEAAAAPAAcAAQABAAEAAAAPAAYAAQABAAEAAAAQAAYAAQABAAEAAAAQAAUAAQABAAEAAAARAAUAAQABAAEAAAARAAYAAQABAAEAAAASAAYAAQABAAEAAAATAAYAAQABAAEAAAAUAAYAAQABAAEAAAD9/wYAAQACAAEAAAD8/wYAAQACAAEAAAD7/wYAAQACAAEAAAD7/wUAAQACAAEAAAD7/wQAAQACAAEAAAD6/wQAAQACAAEAAAD6/wMAAQACAAEAAAD5/wIAAQACAAEAAAD5/wMAAQACAAEAAAD5/wQAAQACAAEAAAD5/wUAAQACAAEAAAD4/wUAAQACAAEAAAD4/wYAAQACAAEAAAD3/wYAAQACAAEAAAD3/wUAAQACAAEAAAD3/wQAAQACAAEAAAD3/wMAAQACAAEAAAD4/wMAAQACAAEAAAD8/wQAAQACAAEAAAD4/wQAAQACAAEAAAD2/wUAAQACAAEAAAD1/wUAAQACAAEAAAD1/wYAAQACAAEAAAD0/wYAAQACAAEAAAD0/wcAAQACAAEAAADz/wcAAQACAAEAAAAVAAcAAQACAAEAAAAWAAcAAQACAAEAAAAWAAgAAQACAAEAAAAXAAgAAQACAAEAAAAYAAgAAQACAAEAAAAZAAgAAQACAAEAAAAbAAYAAQACAAEAAAAbAAUAAQACAAEAAAAbAAQAAQACAAEAAAAbAAMAAQACAAEAAAAYAAcAAQACAAEAAAAZAAcAAQACAAEAAAAZAAYAAQACAAEAAAAaAAYAAQACAAEAAAAaAAUAAQACAAEAAAA=")
+tile_map_data = PackedByteArray("AAD5/xgAAQAAAAIAAAD6/xgAAQAAAAIAAAD7/xgAAQAAAAIAAAD8/xgAAQAAAAIAAAD9/xgAAQAAAAIAAAAAABcAAQAAAAIAAAABABcAAQAAAAIAAAACABcAAQAAAAIAAAAEABUAAQAAAAIAAAAFABUAAQAAAAIAAAAGABUAAQAAAAIAAAAHABUAAQAAAAIAAAAJABYAAQAAAAIAAAAKABYAAQAAAAIAAAALABYAAQAAAAIAAAARABYAAQAAAAIAAAASABYAAQAAAAIAAAATABYAAQAAAAIAAAATABcAAQAAAAIAAAAUABcAAQAAAAIAAAAVABcAAQAAAAIAAAAWABcAAQAAAAIAAAAXABcAAQAAAAIAAAAYABYAAQAAAAIAAAAZABUAAQAAAAIAAAAaABQAAQAAAAIAAAANABUAAQAAAAIAAAAOABUAAQAAAAIAAAAPABUAAQAAAAIAAAAQABUAAQAAAAIAAAAcABMAAQAAAAIAAAAdABMAAQAAAAIAAAAeABMAAQAAAAIAAAAfABMAAQAAAAIAAAAgABQAAQAAAAIAAAAhABQAAQAAAAIAAAAhABUAAQAAAAIAAAAiABUAAQAAAAIAAAAiABYAAQAAAAIAAAAjABYAAQAAAAIAAAAkABYAAQAAAAIAAAAlABYAAQAAAAIAAAAlABUAAQAAAAIAAAAmABUAAQAAAAIAAAAoABUAAQAAAAIAAAApABUAAQAAAAIAAAAqABUAAQAAAAIAAAAqABQAAQAAAAIAAAArABQAAQAAAAIAAAAnABUAAQAAAAIAAAD4/xgAAQAAAAIAAAD4/xcAAQAAAAIAAAD4/xYAAQAAAAIAAAD4/xUAAQAAAAIAAAD4/xQAAQAAAAIAAAD4/xMAAQAAAAIAAAD4/xIAAQAAAAIAAAD4/xEAAQAAAAIAAAArABMAAQAAAAIAAAArABIAAQAAAAIAAAArABEAAQAAAAIAAAArABAAAQAAAAIAAAArAA8AAQAAAAIAAAArAA4AAQAAAAIAAAA=")
 tile_set = SubResource("TileSet_1bvp3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CoinUI" parent="CanvasLayer" instance=ExtResource("4_lquwl")]
+
+[node name="Coin" parent="." instance=ExtResource("5_7mycd")]
+position = Vector2(766, 415)
+
+[node name="Coin2" parent="." instance=ExtResource("5_7mycd")]
+position = Vector2(591, 365)
+
+[node name="Coin3" parent="." instance=ExtResource("5_7mycd")]
+position = Vector2(486, 454)
+
+[node name="Coin4" parent="." instance=ExtResource("5_7mycd")]
+position = Vector2(403, 434)
+
+[node name="Coin5" parent="." instance=ExtResource("5_7mycd")]
+position = Vector2(263, 414)
+
+[node name="Coin6" parent="." instance=ExtResource("5_7mycd")]
+position = Vector2(90, 453)
+
+[node name="Coin7" parent="." instance=ExtResource("5_7mycd")]
+position = Vector2(189, 415)
