@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccrebeillprx1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qpsl"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[node name="Coin" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6qpsl")
+animation = &"spin"
+autoplay = "spin"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

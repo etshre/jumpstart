@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db0hgqakvj4xd"
-path="res://.godot/imported/bleueueueu.png-01248770d4f51705fb5dcc2e0e68cd9b.ctex"
+path="res://.godot/imported/bleueueueu.png-7696ef7678da590793fbbc5caa616741.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bleueueueu.png"
-dest_files=["res://.godot/imported/bleueueueu.png-01248770d4f51705fb5dcc2e0e68cd9b.ctex"]
+source_file="res://images/bleueueueu.png"
+dest_files=["res://.godot/imported/bleueueueu.png-7696ef7678da590793fbbc5caa616741.ctex"]
 
 [params]
 
